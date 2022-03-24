@@ -37,7 +37,7 @@ def text_processor(text_path, test_size=0.2):
         for file in files:
             #print(file)
             with open(os.path.join(new_folder_path, file), 'r', encoding='UTF-8',errors='ignore') as fp:
-                raw = fp.read()
+                raw = fp.readline()
             word_cut = jieba.cut(raw, cut_all=True)  # Precise pattern slice and dice article
             word_list = list(word_cut)  # One word_list for one article
             data_list.append(word_list)
